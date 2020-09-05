@@ -1,0 +1,34 @@
+{% extends 'layouts/base.html' %}
+{% block title %}
+您已登出
+{% endblock %}
+{% block content %}
+<div class="login-center">
+    <div id="main">
+        正在登出，请稍后！
+    </div>
+</div>
+  
+{% endblock %}
+
+{% block js %}
+<script>
+    var vm = {
+        data:{},
+        methods:{
+            
+        },
+        init:function(){
+            axios.get('/api/auth/logout').then(function(res){
+                setTimeout(function(){
+                    $("#main").html('您已经登出！<a href="/login">点击登录</a>')
+                },1500)
+            }).catch(function(e){
+                console.log(e)
+                alert('登出失败，请刷新！')
+            })
+        }
+    }
+    vm.init()
+</script>
+{% endblock %}

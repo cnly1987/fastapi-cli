@@ -1,0 +1,68 @@
+{% extends 'layouts/base.html' %}
+{% block title %}
+登录
+{% endblock %}
+{% block content %}
+<div class="login-center">
+    <form id="login-form">
+        <div class="row">
+        <div class="input-field col s12">
+            <input  id="username"  name="username" type="text" class="validate" required>
+            <label for="username">用户名</label>
+        </div>
+        
+        <div class="row">
+        <div class="input-field col s12">
+            <input id="password" name="password" type="password" class="validate" required>
+            <label for="password" >密码</label>
+        </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+            <button class="waves-effect waves-light btn" type="submit"  >登录</button>
+            </div>
+        </div>
+    
+        
+    </form>
+</div>
+  
+{% endblock %}
+
+{% block js %}
+<script>
+    var vm = {
+        data:{},
+        methods:{
+            
+        },
+        action:function(){
+            $("#login-form").submit(function(e){
+                e.preventDefault()
+                var sdata = objectifyForm($("#login-form").serializeArray())
+                console.log(sdata)
+                axios({
+                    url:'/api/auth/login', 
+                    method:'post', 
+                    data:sdata
+                }).then(function(res){
+                    console.log(res)
+                    M.toast({html: '登录成功!'})
+                    setTimeout(function(){
+                        location.href='/'
+                    }, 1500)
+                     
+                }).catch(function(err){
+                    console.log(err.response)
+                    M.toast({html: '登录失败!'})
+                })
+
+            })
+        },
+        init:function(){
+            this.action()
+        }
+    }
+    vm.init()
+</script>
+{% endblock %}

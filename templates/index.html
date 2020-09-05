@@ -1,0 +1,85 @@
+{% extends 'layouts/base.html' %}
+{% block content %}
+ 
+        
+<div class="container" style="padding-top:40px;">
+        
+    <div class="row">
+        <div class="col s12">
+            航空货物主运单查询
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s12">
+            <div class="row">
+                <div class="input-field col s9 m6">
+                    <i class="material-icons prefix">flight_land</i>
+                    <input type="text"  id="awb">
+                    <label for="awb">主单号</label>
+                </div>
+                <div class="input-field col s3 m6">
+                    
+                    <button class="waves-effect waves-light btn btn-small darken-3" onclick="app.methods.awb()">查 询<i class="material-icons right">send</i></button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col s12"  >
+            <span class="swarning">请在主运单中输入空运主运单号. 格式 222-12345678 或 22212345678</span>
+        </div>
+        <div class="col s12" style="padding-top:20px">
+            <div style="font-weight:bold"> 
+                操作指南：
+            </div>
+            <li>航空货运单格式[航司主单前缀(3位)+运单号(8位)] 222-12345678 或 22212345678 .</li>
+            <li>我们将您输入的运单号的前三位数字来判断航空公司.</li>
+            <li>点击「查询」进行运单状态跟踪</li>
+            <li>我们支持大多数的航空公司，如有疑问请联系admin@ibayeux.com</li>
+        </div>
+        <div class="col s12" style="padding-top:20px">
+            <div style="font-weight:bold">
+                集成在您的系统使用：
+            </div>
+                <li>1、创建一个div容器,容器中加入iframe标签： 
+                    <p style="text-indent:2em"><code>&lt;iframe src="http://www.airwaybill.cn/iframe/awb.html" class="iframe" &gt;&lt;/iframe&gt;</code></p>
+                </li>
+                <li>2、Http请求方式：http://www.airwaybill.cn/cargo?awb=222-12345678 </li> 
+        </div>
+        <div class="col s12" style="padding-top:20px">
+            <div style="font-weight:bold">
+                航空货运常用链接:
+            </div>
+            <ul class="list">
+                <li>
+                    <a href="http://www.azworldairports.com/indexes/p-alwb0.cfm" target="_blank">航线代码</a>
+                </li>
+                <li>
+                    <a href="https://www.world-airport-codes.com/" target="_blank">机场代码</a>
+                </li> 
+                <li>
+                    <a href="http://www.iata.org/about/members/Pages/airline-list.aspx" target="_blank">IATA国际航空运输协会</a>
+                </li>
+                <li>
+                    <a href="https://app.singlewindow.cn/" target="_blank">
+                        国际贸易窗口
+                    </a>
+                </li>
+                <li>
+                    <a href="http://query.customs.gov.cn/MNFTQ/MQuery.aspx" target="_blank">
+                        舱单信息查询 
+                    </a>
+                </li>
+               
+            </ul>
+        </div>
+
+    </div>
+     
+     
+</div>
+ 
+ 
+     
+{% endblock %}

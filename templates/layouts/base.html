@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{%block title%}AirWayBill-航空货物主运单{%endblock%}</title>
+    <meta name="keywords" content="awb,mawb,master air waybill,mawb number,Air cargo tracking,mawb no,master awb,track trace,国际快递,国际快件">
+    <meta name="description" content="国际快递,国际速递,国际快件,主运单查询,航空公司货物追踪,货物查询,航空货物查询,运单轨迹跟踪,空运总单查询,航空运输单号查询,空运单号查询,ARI CARGO,TRACK TRACE,www.airwaybill.cn">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="/static/assets/img/favicon-32x32.png" type="image/x-icon">
+     
+      <link href="http://fonts.airwaybill.cn/icon?family=Material+Icons" rel="stylesheet">
+      <link href="http://fonts.airwaybill.cn/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="/static/assets/css/materialize.min.css">
+      <link rel="stylesheet" href="/static/assets/css/app.css?v=1.02">
+    {%block css%}{%endblock%}
+</head>
+<body> 
+
+ 
+    <div class="nav-wrapper navbar-fixed"> 
+        <nav class=" blue nav-headers">
+            <div class="container">
+                <a href="/" class="logo"><span class="log1">Air</span><span class="log2">Waybill</span><span class="log3">.cn</span></a>
+                <ul  class="right hide-on-med-and-down">
+                    <li><a href="/awb.html">空运跟踪</a></li>
+                    <li><a href="/iata.html">机场三字码</a></li> 
+                    <li><a href="/airline.html">航空公司</a></li> 
+                    <li><a href="/e-awb.html">E-WAB</a></li> 
+                     
+                    <li>
+                        <a class="dropdown-trigger" href="#" data-target="navdown">其他工具<i class="material-icons right">arrow_drop_down</i></a>
+                        <ul id="navdown" class="dropdown-content">
+                          <li><a href="/clearance.html">通关查询</a></li>
+                          <li><a href="/rate.html">汇率实时牌价</a></li>
+                          <li class="divider"></li>
+                          <li><a href="/habor.html">港口</a></li>
+                          <li><a href="/shipper.html">船公司</a></li> 
+                        </ul>
+                    </li>
+                      
+                     
+                </ul>
+                <ul id="nav-mobile" class="sidenav">
+                    <div class="card">  导航  </div>
+                    <li><a href="/awb.html">空运跟踪</a></li>
+                    <li><a href="/iata.html">机场三字码</a></li> 
+                    <li><a href="/airline.html">航空公司</a></li> 
+                </ul>
+                <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            </div>
+        </nav> 
+    </div>
+   
+    <div class="container" style="padding-top:40px;min-height: 87vh;">
+        
+        {% block content %}
+                
+        {% endblock %}
+    </div>
+ 
+
+    <footer class="page-footer">
+        <div class="container">
+          <div class="row">
+            <div class="col l12 s12 ">
+                <h5 class="white-text"><a href="/" class="logo"><span class="log1">Air</span><span class="log2">Waybill</span><span class="log3">.cn</span></a></h5>
+               
+            </div>
+         
+          </div>
+        </div>
+        <div class="footer-copyright">
+          <div class="container">
+            <div style="margin:0 auto; text-align:center">
+                <a class="grey-text text-lighten-4" href="/">© <script>document.write(new Date().getFullYear())</script>-深圳市新昉科技 Copyright</a>
+            </div>
+          </div>
+        </div>
+      </footer> 
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZWT36S65P2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-ZWT36S65P2');
+    </script>
+     
+    <script src="/static/assets/js/jquery-2.2.3.min.js"></script>
+    <script src="/static/libs/lodash.min.js"></script>
+    <script src="/static/libs/low.min.js"></script>
+    <script src="/static/libs/LocalStorage.min.js"></script>
+    <script src="/static/libs/axios.min.js"></script>
+    <script src="/static/assets/js/materialize.js"></script>
+    <script src="/static/assets/js/app.js?v=1.02"></script>
+    {%block js%}{%endblock%}
+</body>
+</html>
