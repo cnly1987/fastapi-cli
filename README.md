@@ -29,5 +29,22 @@ crud.py
 routers/*
 
 
+##Usage:
+
+```
+from core.viewset import ViewSets
+from appcations.users import schemas, models
+
+userview = ViewSets(models.User, schemas.User, schemas.UserCreate, schemas.UserUpdate, schemas.UserPatch)
+
+app.include_router(userview.as_view(), prefix="/api/users/accounts")
+
+```
+
+then:
+![0EllMd.png](https://s1.ax1x.com/2020/09/28/0EllMd.png)
+
+
+
 
 
